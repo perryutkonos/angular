@@ -1,0 +1,21 @@
+<table class="tree-grid__subrows">
+    <tbody>
+    <tr class="tree-grid__row" (click)="toggleSubRows()">
+        <td class="tree-grid__cell">
+            <span>{{row.id}}</span>
+        </td>
+        <td class="tree-grid__cell">
+            <span [ngStyle]="{'margin-left':marginLeft}">{{row.name}} </span>
+        </td>
+        <td class="tree-grid__cell">
+            <span>{{row.comment}}</span>
+        </td>
+    </tr>
+    <ng-container *ngIf="showSubRows">
+        <tr *ngFor="let subRow of row.subRows">
+            <td app-row [row]="subRow" [level]="level+1" colspan="3"></td>
+        </tr>
+    </ng-container>
+    </tbody>
+</table>
+

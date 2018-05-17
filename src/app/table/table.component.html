@@ -1,0 +1,14 @@
+<table class="tree-grid">
+    <thead class="tree-grid__head">
+    <tr>
+        <td class="tree-grid__cell">ID</td>
+        <td class="tree-grid__cell">Название</td>
+        <td class="tree-grid__cell">Комментарий</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rows">
+            <td app-row [row]="row" [level]="0" colspan="3"></td>
+        </tr>
+    </tbody>
+</table>
